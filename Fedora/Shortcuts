@@ -1,0 +1,7 @@
+ALT + Arrows = switch text lines
+HOME = to line beginning
+END = to line end
+CTRL + SHIFT + C/V = copy from/paste into bash terminal
+CTRL + ALT + F3 = enter TTY (emergency shell where eventually run sudo reboot)
+CTRL + ALT + F1 = return to GUI from TTY
+ALT GR + ì = ~
