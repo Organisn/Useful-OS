@@ -5,3 +5,5 @@ CTRL + SHIFT + C/V = copy from/paste into bash terminal
 CTRL + ALT + F3 = enter TTY (emergency shell where eventually run sudo reboot)
 CTRL + ALT + F1 = return to GUI from TTY
 ALT GR + ì = ~
+
+Bash escape character = "\" (to escape "\", """, " ")
