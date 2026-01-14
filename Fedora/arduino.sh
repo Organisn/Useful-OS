@@ -11,5 +11,5 @@ lsusb -vvv
 sudo udevadm control --reload
 # If not enough, add your actual account to dialout group
 sudo usermod -a -G dialout <username>
-# Username can be found by 
+# Username can be found with
 whoami
