@@ -15,8 +15,11 @@ ls -al ~/.ssh
 # GENERATE NEW SSH KEY
 # Replace mail address with that associated with github account
 ssh-keygen -t ed25519 -C "emanuele.snidero@gmail.com"
-# When you're prompted to "Enter a file in which to save the key (/home/YOU/.ssh/id_ALGORITHM): ", you can press Enter to accept the default file location. Please note that if you created SSH keys previously, ssh-keygen may ask you to rewrite another key, in which case we recommend creating a custom-named SSH key. To do so, type the default file location and replace id_ALGORITHM with your custom key name
-# First passphrase: Passalaffras3!
+# When you're prompted to "Enter a file in which to save the key (/home/YOU/.ssh/id_ALGORITHM): ", 
+# you can press Enter to accept the default file location. Please note that if you created SSH keys previously, 
+# ssh-keygen may ask you to rewrite another key, in which case we recommend creating a custom-named SSH key. 
+# To do so, type the default file location and replace id_ALGORITHM with your custom key name
+# FIRST PASSPHRASE: Passalaffras3!
 # The key's randomart image is:
 # +--[ED25519 256]--+
 # |   ....oo        |
