@@ -61,3 +61,7 @@ git remote set-url origin git@github.com:OWNER/REPOSITORY.git
 git remote -v
 # origin  git@github.com:OWNER/REPOSITORY.git (fetch)
 # origin  git@github.com:OWNER/REPOSITORY.git (push)
+
+# BE SURE VSCODE INHERITS THE SETUP TERMINAL ENVIRONMENT WHEN OPENED
+# To open folder with Code from bash
+code ~/directory/to/open # 'code .' if already into dir
