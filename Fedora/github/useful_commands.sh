@@ -25,3 +25,5 @@ git branch --set-upstream-to=origin/branch_name current_branch_name
 git config --global init.defaultBranch main
 # Pre-commit stage
 git stash
+# Check repository files and folders status (tracked, modified, waiting for commit, etc.)
+git status
