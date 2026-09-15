@@ -1,1 +1,1 @@
-eval "$(ssh-agent -s)"
+sudo eval "$(ssh-agent -s)"
