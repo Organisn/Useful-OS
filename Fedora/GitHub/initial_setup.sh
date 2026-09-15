@@ -34,7 +34,7 @@ ssh-keygen -t ed25519 -C "emanuele.snidero@gmail.com"
 # +----[SHA256]-----+
 # ADD SSH KEY TO SSH AGENT
 # Start ssh-agent in the background
-eval "$(ssh-agent -s)"
+eval "$(sudo ssh-agent -s)"
 # Add key
 # Replace filename with generated key one
 ssh-add ~/.ssh/id_ed25519
@@ -64,7 +64,7 @@ git remote -v
 
 # Automate ssh agent launch at system boot
 # Create an sh file containing
-eval "$(ssh-agent -s)"
+eval "$(sudo ssh-agent -s)"
 # Assign execution rights to it
 chmod +x "/path/to/script.sh"
 # Check the -x parameters is set as script right (ex: -rwxr-xr-x)
