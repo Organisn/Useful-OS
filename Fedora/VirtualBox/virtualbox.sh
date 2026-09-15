@@ -37,6 +37,33 @@ sudo /usr/src/kernels/$(uname -r)/scripts/sign-file sha256 /root/MOK.priv /root/
 # and manually launch the just signed driver
 sudo modprobe vboxdrv
 
+# If modules are unsigned every boot, made the signature procedure automatic
+# Create an sh file containing
+sudo /usr/src/kernels/$(uname -r)/scripts/sign-file sha256 /root/MOK.priv /root/MOK.der $(modinfo -n vboxdrv)
+sudo modprobe vboxdrv
+# Assign execution rights to it
+chmod +x "/path/to/script.sh"
+# Check the -x parameters is set as script right (ex: -rwxr-xr-x)
+ls -l "/path/to/script.sh"
+# Create a service configuration file
+sudo nano /etc/systemd/system/script.service
+# Paste and customize (no "" required for paths here)
+[Unit]
+Description=boot automatic signature and launch for vboxdrv VirtualBox module
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/path/to/script.sh
+
+[Install]
+WantedBy=multi-user.target
+# Relaunch systemd demon and activate service automatic exec
+sudo systemctl daemon-reload
+sudo systemctl enable --now script.service
+# Check service active state
+sudo systemctl status script.service
+
 # FOR FUTURE FEDORA KERNEL UPDATES, 
 # you will need to repeat the signing process for the new kernel modules:
 sudo /sbin/vboxconfig
