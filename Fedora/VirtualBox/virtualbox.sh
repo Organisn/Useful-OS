@@ -47,7 +47,7 @@ chmod +x "/path/to/script.sh"
 ls -l "/path/to/script.sh"
 # Create a service configuration file
 sudo nano /etc/systemd/system/script.service
-# Paste and customize (no "" required for paths here)
+# Paste and customize (use backslash before space in paths!)
 [Unit]
 Description=boot automatic signature and launch for vboxdrv VirtualBox module
 After=network.target
