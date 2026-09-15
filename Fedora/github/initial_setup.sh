@@ -62,6 +62,32 @@ git remote -v
 # origin  git@github.com:OWNER/REPOSITORY.git (fetch)
 # origin  git@github.com:OWNER/REPOSITORY.git (push)
 
+# Automate ssh agent launch at system boot
+# Create an sh file containing
+eval "$(ssh-agent -s)"
+# Assign execution rights to it
+chmod +x "/path/to/script.sh"
+# Check the -x parameters is set as script right (ex: -rwxr-xr-x)
+ls -l "/path/to/script.sh"
+# Create a service configuration file
+sudo nano /etc/systemd/system/script.service
+# Paste and customize (use double quotes with script path reference if it contains blank spaces)
+[Unit]
+Description=github ssh agent boot automatic launch
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/bin/bash -c '"/absolute/path/to/script.sh"'
+
+[Install]
+WantedBy=multi-user.target
+# Relaunch systemd demon and activate service automatic exec
+sudo systemctl daemon-reload
+sudo systemctl enable --now script.service
+# Check service active state
+sudo systemctl status script.service
+
 # BE SURE VSCODE INHERITS THE TERMINAL SETUP ENVIRONMENT WHEN OPENED
 # To open folder with Code from bash
 code ~/directory/to/open # 'code .' if already into dir
